@@ -4,6 +4,7 @@
 import Server from './classes/server';
 import router from './routes/router';
 import readfiles from './routes/readfiles.router';
+import material from './routes/material.router';
 import bodyParser from 'body-parser';
 import { Request, Response } from 'express';
 
@@ -37,8 +38,9 @@ server.app.use( ( req: Request, res: Response, next: any ) => {
     next( );
 });
 
-server.app.use('/', router);
-server.app.use('/files', readfiles);
+server.app.use( '/', router );
+server.app.use( '/files', readfiles );
+server.app.use( '/material', material );
 
 server.start( () => {
     console.log(`server running at port ${ server.port }`);    

@@ -38,6 +38,8 @@ export default class Server {
 
             sockSets.desconectar( client );
             sockSets.femessage( client, this.ioServer );
+            sockSets.fewslogin( client, this.ioServer );
+            sockSets.conectarCliente( client );
 
             // client.on('disconnect', () => {
             //     console.log( 'Cliente desconectado' );
